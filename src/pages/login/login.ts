@@ -34,7 +34,7 @@ export class LoginPage {
       });
       alert.present();
       //Llamar el Menu
-      this.navCtrl.push(HomePage,{userLogueado:this._userN});
+      this.navCtrl.push(HomePage,{user:this._userN.value});
     }else{
       const alert = this.alertCtrl.create({
         title: 'Login Incorrecto!',

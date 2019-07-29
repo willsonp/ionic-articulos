@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { DatailsPage } from '../datails/datails';
 
 @Component({
@@ -8,7 +8,11 @@ import { DatailsPage } from '../datails/datails';
 })
 export class HomePage {
   arti=[];
-  constructor(public navCtrl: NavController) {
+  user:String;
+  constructor(public navCtrl: NavController, public navParam: NavParams) {
+    //tomar el usuario que se loqueo...
+    this.user=this.navParam.get('user');
+    //declaramos el arreglo de objetos
     this.arti = [
       {
         'title': 'Angular',
@@ -67,7 +71,7 @@ export class HomePage {
     ]
    //this.nav.setRoot(ListPage);
   }
-
+  //aqui cuando llamamos el detalle de la opcion le pasamos el objeto completo
   openNavDetailsPage(item: any) {
      this.navCtrl.push(DatailsPage, { item: item });
    }  
