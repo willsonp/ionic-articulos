@@ -40,7 +40,7 @@ export class HomePage {
       },
       {
         'title': 'Sass',
-        'icon': 'http://ryandillinger.com/image/badges/node-sass-logo.png',
+        'icon': 'https://www.mugo.ca/var/ezwebin_site/storage/images/media/images/sass-blog-post-image01/315767-1-eng-US/sass-blog-post-image01_reference.jpg',
         'description': 'Syntactically Awesome Stylesheets - a mature, stable, and powerful professional grade CSS extension.',
         'color': '#CE6296'
       },
