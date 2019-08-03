@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { DatailsPage } from '../datails/datails';
+import { ArticulosServices } from '../../services/articulosServices';
 
 @Component({
   selector: 'page-home',
@@ -9,7 +10,8 @@ import { DatailsPage } from '../datails/datails';
 export class HomePage {
   arti=[];
   user:String;
-  constructor(public navCtrl: NavController, public navParam: NavParams) {
+  constructor(public navCtrl: NavController, public navParam: NavParams,public servicio: ArticulosServices) {
+
     //tomar el usuario que se loqueo...
     this.user=this.navParam.get('user');
     //declaramos el arreglo de objetos
@@ -69,11 +71,21 @@ export class HomePage {
         'color': '#000'
       }
     ]   
-    
+
   }
   //aqui cuando llamamos el detalle de la opcion le pasamos el objeto completo
   openNavDetailsPage(item: any) {
      this.navCtrl.push(DatailsPage, { item: item });
    }  
+  
+   publicar(){
+     let obj:any={
+       'titulo':"Proabando desde la APPs",
+       'descricion':"estos es una prueba para enviar datos desde la Apps",
+       'likes':2
+     }
+     this.servicio.publicar(obj);
+   }
+
   
 }
