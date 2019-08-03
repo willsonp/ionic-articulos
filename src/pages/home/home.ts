@@ -68,8 +68,8 @@ export class HomePage {
         'description': 'The official mascot of the Linux kernel!',
         'color': '#000'
       }
-    ]
-   //this.nav.setRoot(ListPage);
+    ]   
+    
   }
   //aqui cuando llamamos el detalle de la opcion le pasamos el objeto completo
   openNavDetailsPage(item: any) {

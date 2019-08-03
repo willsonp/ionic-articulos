@@ -33,8 +33,11 @@ export class LoginPage {
         buttons: ['OK']
       });
       alert.present();
-      //Llamar el Menu
-      this.navCtrl.push(HomePage,{user:this._userN.value});
+      //Llamar el Menu pero no ponerlo pagina inicio
+      //this.navCtrl.push(HomePage,{user:this._userN.value});
+
+      //para llamar y establecer como pagina de inicio o principal
+      this.navCtrl.setRoot(HomePage,{user:this._userN.value});
     }else{
       const alert = this.alertCtrl.create({
         title: 'Login Incorrecto!',
