@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
 import { ArticulosServices } from '../../services/articulosServices';
 
 /**
@@ -15,11 +15,12 @@ import { ArticulosServices } from '../../services/articulosServices';
   templateUrl: 'datails.html',
 })
 export class DatailsPage {
+  [x: string]: any;
   @ViewChild('tiTle') _tiTle;
   @ViewChild('desc') _desc;  
   
    item:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public servicio: ArticulosServices) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public servicio: ArticulosServices,public alertCtrl: AlertController) {
     this.item=this.navParams.get('item');
   }
 
@@ -28,13 +29,37 @@ export class DatailsPage {
   }
 
   publicar(){
-    let obj:any={
+    if(this._desc.value!=="" && this._tiTle.value!==""){
+      
+      let obj:any={
       'titulo':this._tiTle.value,
       'descricion':this._desc.value,
       'likes':0
-    }
+      }
     //console.log("======>"+this._desc.value)
     this.servicio.publicar(obj);
+    this.limpiarValores();
+    }else{
+       const alert = this.alertCtrl.create({
+        title: 'Control!',
+        subTitle: 'NO se permite dejar el Valor del Titulo o Comentario en Blanco, Favor Llenarlo! ',
+        buttons: ['OK']
+      });
+      alert.present();
+      return
+    }
   }
 
+  limpiarValores(){
+      const alert = this.alertCtrl.create({
+        title: 'Estado!',
+        subTitle: 'Publicado Satisfactoriamente! ',
+        buttons: ['OK']
+      });
+      alert.present();
+      //asiganr valor en blanco
+      this._desc.value="";
+      this._tiTle.value="";    
+    
+  }
 }
