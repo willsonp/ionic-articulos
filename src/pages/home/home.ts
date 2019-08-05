@@ -80,9 +80,9 @@ export class HomePage {
   
    publicar(){
      let obj:any={
-       'titulo':"Proabando desde la APPs",
+       'titulo':"Java Script para desarrollo web",
        'descricion':"estos es una prueba para enviar datos desde la Apps",
-       'likes':2
+       'likes':8
      }
      this.servicio.publicar(obj);
    }

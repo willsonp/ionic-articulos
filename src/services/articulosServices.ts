@@ -6,7 +6,7 @@ export class ArticulosServices{
     constructor(public AFD: AngularFireDatabase){
      
     }
-    publicar(obj){
+    publicar(obj:any){
       this.AFD.database.ref('articulos').push(obj);
     }
 }
