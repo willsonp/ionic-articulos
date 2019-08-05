@@ -9,7 +9,7 @@
 
 <ion-content padding>
  
-    <ion-card *ngFor="let item of arti" (click)="openNavDetailsPage(item)">
+    <ion-card *ngFor="let item of arti">
       
         <img src='{{item.icon}}'/>
         
@@ -17,20 +17,22 @@
           <ion-card-title >
             {{item.title}}
             </ion-card-title>
+           
             <ion-col>
-              <button ion-button clear small color="primary" icon-start>
-                <ion-icon name='thumbs-up'></ion-icon>
-                Likes
-              </button>
-            </ion-col>
-
+                <button ion-button clear small color="primary" icon-start>
+                  <ion-icon name='thumbs-up'></ion-icon>
+                  <ion-badge color="secondary">500k</ion-badge>
+                  </button>
+               
+             </ion-col>
+        
             <ion-col text-right>
-              <button ion-button clear small color="primary" icon-start>
-                <ion-icon name='chatbubbles'></ion-icon>
-                Comments
+              <button ion-button clear small color="primary" icon-start (click)="openNavDetailsPage(item)">
+                <ion-icon name='eye'></ion-icon>
+                Details
               </button>
             </ion-col>
-
+          
 
         </ion-card-content>
       </ion-card>
