@@ -18,5 +18,40 @@
       <p>
         {{item.description}}
       </p>
+      <ion-col>
+        <button ion-button clear small color="primary" icon-start>
+          <ion-icon name='thumbs-up'></ion-icon>
+          Likes
+        </button>
+      </ion-col>
+
+      <ion-col text-right>
+        <button ion-button clear small color="primary" icon-start>
+          <ion-icon name='chatbubbles'></ion-icon>
+          Comments
+        </button>
+      </ion-col>
+
+    </ion-card>
+    <ion-card padding>
+       <!-- poner entrada de datos aqui -->
+       <ion-list>
+
+        <ion-item>
+          <ion-label floating>Titulo:</ion-label>
+          <ion-input type="text" #tiTle></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label floating>Descripcion:</ion-label>
+          <ion-input type="text" #desc></ion-input>
+        </ion-item>
+      
+      </ion-list>
+      
+      <div padding>
+        <button ion-button round (click)="publicar()">Publicar</button>
+      </div>
+
     </ion-card>
 </ion-content>

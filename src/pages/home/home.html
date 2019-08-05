@@ -2,7 +2,7 @@
   <ion-navbar>
     <ion-title>
         <ion-icon name="home"></ion-icon>
-     Bienvenid@ : {{user}}  <button ion-button round (click)="publicar()">Publicar</button>
+     Bienvenid@ : {{user}}
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -17,7 +17,20 @@
           <ion-card-title >
             {{item.title}}
             </ion-card-title>
-         
+            <ion-col>
+              <button ion-button clear small color="primary" icon-start>
+                <ion-icon name='thumbs-up'></ion-icon>
+                Likes
+              </button>
+            </ion-col>
+
+            <ion-col text-right>
+              <button ion-button clear small color="primary" icon-start>
+                <ion-icon name='chatbubbles'></ion-icon>
+                Comments
+              </button>
+            </ion-col>
+
         </ion-card-content>
       </ion-card>
       

@@ -78,14 +78,7 @@ export class HomePage {
      this.navCtrl.push(DatailsPage, { item: item });
    }  
   
-   publicar(){
-     let obj:any={
-       'titulo':"Java Script para desarrollo web",
-       'descricion':"estos es una prueba para enviar datos desde la Apps",
-       'likes':8
-     }
-     this.servicio.publicar(obj);
-   }
-
   
-}
+  
+  
+  }
