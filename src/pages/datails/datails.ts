@@ -20,7 +20,10 @@ export class DatailsPage {
   @ViewChild('desc') _desc;  
   
    item:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public servicio: ArticulosServices,public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              public servicio: ArticulosServices,
+              public alertCtrl: AlertController) {
     this.item=this.navParams.get('item');
   }
 
