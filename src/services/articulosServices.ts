@@ -6,7 +6,16 @@ export class ArticulosServices{
     constructor(public AFD: AngularFireDatabase){
      
     }
-    publicar(obj:any){
+    public publicar(obj:any){
       this.AFD.database.ref('articulos').push(obj);
+    }
+
+    public getPost(){
+      let a:any = [];
+      this.AFD.list('articulos').valueChanges().subscribe((post=>{
+
+        a = post;       
+      }));
+      return a;
     }
 }

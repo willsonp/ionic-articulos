@@ -20,6 +20,7 @@ export class DatailsPage {
   @ViewChild('desc') _desc;  
   
    item:any;
+   data:any;
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               public servicio: ArticulosServices,
@@ -41,6 +42,7 @@ export class DatailsPage {
       }
     //console.log("======>"+this._desc.value)
     this.servicio.publicar(obj);
+   
     this.limpiarValores();
     }else{
        const alert = this.alertCtrl.create({
@@ -64,5 +66,9 @@ export class DatailsPage {
       this._desc.value="";
       this._tiTle.value="";    
     
+  }
+  cargarData(){
+       this.data = this.servicio.getPost()
+       console.log(this.data)
   }
 }
