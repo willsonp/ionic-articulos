@@ -14,6 +14,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ArticulosServices } from '../services/articulosServices';
+import { RegistrarPage } from '../pages/registrar/registrar';
 
 //para vlidar la conexion con FireBase
 export const firebaseConfig = {
@@ -32,7 +33,8 @@ export const firebaseConfig = {
     MyApp,
     HomePage,
     DatailsPage,
-    LoginPage
+    LoginPage,
+    RegistrarPage
     
   ],
   imports: [
@@ -40,14 +42,16 @@ export const firebaseConfig = {
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig), //agregado a los imports para FireBase
     AngularFireDatabaseModule, //agregado a los imports para FireBase
-    AngularFireAuthModule //agregado a los imports para FireBase
+    AngularFireAuthModule //agregado a los imports para FireBase y authenticate user
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     DatailsPage,
-    LoginPage
+    LoginPage,
+    RegistrarPage
   ],
   providers: [
     StatusBar,

@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { RegistrarPage } from '../registrar/registrar';
 
 /**
  * Generated class for the LoginPage page.
@@ -51,13 +52,14 @@ export class LoginPage {
 
   //metodo para limpiar valores
   cacelar(){
-    const alert = this.alertCtrl.create({
-      title: 'Login Canceled!',
-      subTitle: 'Accion Cancelada! ',
-      buttons: ['OK']
-    });
-    alert.present();
+    // const alert = this.alertCtrl.create({
+    //   title: 'Login Canceled!',
+    //   subTitle: 'Accion Cancelada! ',
+    //   buttons: ['OK']
+    // });
+    // alert.present();
     //asiganr valor en blanco
+    this.navCtrl.push(RegistrarPage);
     this._userN.value="";
     this._userPwd.value="";    
     
