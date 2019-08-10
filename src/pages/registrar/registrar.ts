@@ -18,7 +18,7 @@ export class RegistrarPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
+  register() {
     console.log('ionViewDidLoad RegistrarPage');
   }
 
