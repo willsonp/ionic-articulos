@@ -13,7 +13,6 @@ export class ArticulosServices{
     public getPost(){
       let a:any = [];
       this.AFD.list('articulos').valueChanges().subscribe((post=>{
-
         a = post;       
       }));
       return a;
