@@ -25,6 +25,8 @@ export class DatailsPage {
               public navParams: NavParams,
               public servicio: ArticulosServices,
               public alertCtrl: AlertController) {
+
+    this.servicio.getPost();
     this.item=this.navParams.get('item');
   }
 
@@ -36,6 +38,7 @@ export class DatailsPage {
     if(this._desc.value!=="" && this._tiTle.value!==""){
       
       let obj:any={
+      'id':Date.now(),  
       'titulo':this._tiTle.value,
       'descricion':this._desc.value,
       'likes':0
@@ -67,8 +70,11 @@ export class DatailsPage {
       this._tiTle.value="";    
     
   }
+  //para cargar los datos
   cargarData(){
-       this.data = this.servicio.getPost()
-       console.log(this.data)
+       this.servicio.getPost().valueChanges().subscribe((post=>{
+          this.data = post;
+          console.log(this.data)
+       }));
   }
 }

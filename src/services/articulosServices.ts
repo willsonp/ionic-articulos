@@ -3,18 +3,22 @@ import {Injectable} from "@angular/core";
 
 @Injectable()
 export class ArticulosServices{
-    constructor(public AFD: AngularFireDatabase){
+    constructor(public AFD:AngularFireDatabase){
      
     }
+    //agregar un dato en la DB
     public publicar(obj:any){
       this.AFD.database.ref('articulos').push(obj);
     }
 
+    //obtener los datos y devolverlos como obj
     public getPost(){
-      let a:any = [];
-      this.AFD.list('articulos').valueChanges().subscribe((post=>{
-        a = post;       
-      }));
-      return a;
+      return this.AFD.list('articulos');
     }
+    
+    public editar(obj:any){
+      this.AFD.database.ref('articulos/'+obj.id).push(obj);
+    }
+
+     
 }
