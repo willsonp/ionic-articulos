@@ -15,6 +15,7 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/da
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ArticulosServices } from '../services/articulosServices';
 import { RegistrarPage } from '../pages/registrar/registrar';
+import { MostrarPage } from '../pages/mostrar/mostrar';
 
 //para vlidar la conexion con FireBase
 export const firebaseConfig = {
@@ -34,7 +35,8 @@ export const firebaseConfig = {
     HomePage,
     DatailsPage,
     LoginPage,
-    RegistrarPage
+    RegistrarPage,
+    MostrarPage
     
   ],
   imports: [
@@ -51,7 +53,8 @@ export const firebaseConfig = {
     HomePage,
     DatailsPage,
     LoginPage,
-    RegistrarPage
+    RegistrarPage,
+    MostrarPage
   ],
   providers: [
     StatusBar,

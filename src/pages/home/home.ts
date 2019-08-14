@@ -76,9 +76,9 @@ export class HomePage {
   //aqui cuando llamamos el detalle de la opcion le pasamos el objeto completo
   openNavDetailsPage(item: any) {
      this.navCtrl.push(DatailsPage, { item: item });
-   }  
-  
-  
-  
-  
+   }
+   
+   
+
+   
   }

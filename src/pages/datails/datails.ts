@@ -32,6 +32,7 @@ export class DatailsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DatailsPage');
+    this.cargarData();
   }
 
   publicar(){
@@ -40,12 +41,15 @@ export class DatailsPage {
       let obj:any={
       'id':Date.now(),  
       'titulo':this._tiTle.value,
-      'descricion':this._desc.value,
+      'descripcion':this._desc.value,
       'likes':0
       }
     //console.log("======>"+this._desc.value)
-    this.servicio.publicar(obj);
-   
+    //this.servicio.publicar(obj); 
+    this.servicio.editar(obj);
+    
+    this.cargarData();
+
     this.limpiarValores();
     }else{
        const alert = this.alertCtrl.create({
@@ -74,7 +78,13 @@ export class DatailsPage {
   cargarData(){
        this.servicio.getPost().valueChanges().subscribe((post=>{
           this.data = post;
-          console.log(this.data)
+          console.log(this.data)          
+          // this.mosTrar(this.data);    
        }));
+   
   }
+  //llamar mostrar
+//  mosTrar(o:any){
+//    this.navCtrl.push(MostrarPage, {item_o:o});
+//  }
 }

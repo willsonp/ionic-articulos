@@ -15,9 +15,9 @@ export class ArticulosServices{
     public getPost(){
       return this.AFD.list('articulos');
     }
-    
+    //para editar  agregar en caso no exista
     public editar(obj:any){
-      this.AFD.database.ref('articulos/'+obj.id).push(obj);
+      this.AFD.database.ref('articulos/'+obj.id).set(obj);
     }
 
      

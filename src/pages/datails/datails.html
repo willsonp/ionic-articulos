@@ -19,6 +19,7 @@
         {{item.description}}
       </p>
 
+            
       <ion-col text-right>
         <button ion-button clear small color="primary" icon-start>
           <ion-icon name='chatbubbles'></ion-icon>
@@ -26,14 +27,8 @@
           </button>
         <ion-badge color="dark">110k</ion-badge>
       </ion-col>
-       
-      <!-- <ion-col text-right>
-        <button ion-button clear small color="primary" icon-start>
-          <ion-icon name='chatbubbles'></ion-icon>
-          Tiempo
-        </button>
-      </ion-col> -->
-
+      
+      
     </ion-card>
 
     <!-- para los comentarios -->
@@ -61,11 +56,32 @@
     <div padding>
       <button ion-button round (click)="publicar()">Publicar</button>
 
-      <button ion-button round (click)="cargarData()">Mostrar</button>
+      <button ion-button round (click)="cargarData()">Refresh</button>
     
     </div>
 
   </ion-card>
-
+  
+  <ion-title>
+      <ion-icon name='chatbubbles'></ion-icon>
+      Comentarios creados
+   </ion-title>
+   
+  <ion-card *ngFor='let i of data'>
+      <!-- poner entrada de datos aqui -->
+      <ion-col text-right>
+          
+        <button ion-button clear small color="primary" icon-start>
+            {{i.titulo}}  
+            <ion-icon name='thumbs-up'></ion-icon>
+            <ion-badge color="secondary">{{i.likes}}</ion-badge>
+            </button>
+              
+      </ion-col>  
+      <p>
+          {{i.descripcion}} 
+      </p>
+   </ion-card>
+   
     
 </ion-content>
