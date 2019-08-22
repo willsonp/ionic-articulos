@@ -20,13 +20,20 @@ export class LoginPage {
   
   @ViewChild('userName') _userN;
   @ViewChild('userPasswd') _userPwd;  
-  
+  data:any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public servicio: LoginServices) {
   }
 
   //metodo para validar usuario y password
   entrar(){
+
+    //consultar los usuarios
+    this.cargarData();
     
+    // for(let i of this.data){
+    //   console.log(i.username);
+    // }
+
     if(this._userN.value==="admin" && this._userPwd.value==="admin"){
       //
       const alert = this.alertCtrl.create({
@@ -65,4 +72,12 @@ export class LoginPage {
     this._userPwd.value="";    
     
   }
+  //para cargar los Usuarios registrados
+  cargarData(){
+    this.servicio.getPost().valueChanges().subscribe((post=>{
+       this.data = post;
+       console.log(this.data)          
+    }));
+
+}
 }
