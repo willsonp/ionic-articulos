@@ -16,6 +16,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ArticulosServices } from '../services/articulosServices';
 import { RegistrarPage } from '../pages/registrar/registrar';
 import { MostrarPage } from '../pages/mostrar/mostrar';
+import { LoginServices } from '../services/loginService';
 
 //para vlidar la conexion con FireBase
 export const firebaseConfig = {
@@ -61,7 +62,8 @@ export const firebaseConfig = {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AngularFireDatabase, //agregado a los imports para FireBase
-    ArticulosServices //agrgeado 
+    ArticulosServices, //agrgeado 
+    LoginServices
   ]
 })
 export class AppModule {}
