@@ -41,7 +41,7 @@ export class RegistrarPage {
     //this.servicio.publicar(obj); 
     this.servicio.editar(obj);
     
-    // this.cargarData();
+    this.cargarData();
 
     this.limpiarValores();
     }else{
@@ -68,4 +68,11 @@ export class RegistrarPage {
     
   }
 
+  cargarData(){
+    this.servicio.getPost().valueChanges().subscribe((post=>{
+       this.data = post;
+       console.log(this.data)          
+    }));
+
+}
 }
