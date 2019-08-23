@@ -21,6 +21,7 @@ export class LoginPage {
   @ViewChild('userName') _userN;
   @ViewChild('userPasswd') _userPwd;  
   data:any;
+  load:any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public servicio: LoginServices) {
   }
 
@@ -29,11 +30,14 @@ export class LoginPage {
 
     //consultar los usuarios
     this.cargarData();
-    
-    // for(let i of this.data){
-    //   console.log(i.username);
-    // }
 
+    //rocorrer la data cargada desde la DB
+    for(let i=0; i < this.data; i++){ // n is array.length
+      this.load.push({  username : this.data[i] , passwd : this.data[i] });
+      console.log('===>'+this.load);
+   }
+
+   
     if(this._userN.value==="admin" && this._userPwd.value==="admin"){
       //
       const alert = this.alertCtrl.create({
