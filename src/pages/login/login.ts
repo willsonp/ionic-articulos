@@ -30,14 +30,13 @@ export class LoginPage {
 
     //consultar los usuarios
     this.cargarData();
+    
+    // this.load=this.data;
+    // for(let i=0;i<this.load.length;i++){
+    //   console.log('=========>'+i);
+    // }
 
-    //rocorrer la data cargada desde la DB
-    for(let i=0; i < this.data; i++){ // n is array.length
-      this.load.push({  username : this.data[i] , passwd : this.data[i] });
-      console.log('===>'+this.load);
-   }
 
-   
     if(this._userN.value==="admin" && this._userPwd.value==="admin"){
       //
       const alert = this.alertCtrl.create({
