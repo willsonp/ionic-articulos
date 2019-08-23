@@ -80,7 +80,7 @@ export class LoginPage {
   cargarData(){
     this.servicio.getPost().valueChanges().subscribe((post=>{
        this.data = post;
-       console.log(this.data)          
+       console.log(this.data)
     }));
 
 }
