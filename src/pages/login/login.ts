@@ -23,21 +23,26 @@ export class LoginPage {
   data:any;
   load:any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public servicio: LoginServices) {
+    //consultar los usuarios
+    this.cargarData();
+    this.load=JSON.stringify(this.data);
+    
   }
 
   //metodo para validar usuario y password
   entrar(){
 
-    //consultar los usuarios
-    this.cargarData();
+     //consultar los usuarios
+    //this.cargarData();
+    var xusername=this._userN.value;
     
-    // this.load=this.data;
-    // for(let i=0;i<this.load.length;i++){
-    //   console.log('=========>'+i);
-    // }
-
-
-    if(this._userN.value==="admin" && this._userPwd.value==="admin"){
+    let xuser=this.data.find(user=> user.username===xusername)
+    
+    if(xuser!==undefined){
+      console.log(xuser);
+    }
+  
+    if(this._userN.value===xuser.username && this._userPwd.value===xuser.userpasswd){
       //
       const alert = this.alertCtrl.create({
         title: 'Login Sucessful!',
@@ -76,8 +81,8 @@ export class LoginPage {
     
   }
   //para cargar los Usuarios registrados
-  cargarData(){
-    this.servicio.getPost().valueChanges().subscribe((post=>{
+  async cargarData(){
+    await this.servicio.getPost().valueChanges().subscribe((post=>{
        this.data = post;
        console.log(this.data)
     }));
