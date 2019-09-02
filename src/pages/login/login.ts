@@ -22,6 +22,7 @@ export class LoginPage {
   @ViewChild('userPasswd') _userPwd;  
   data:any;
   load:any;
+  xintentos=0;
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public servicio: LoginServices) {
     //consultar los usuarios
     this.cargarData();
@@ -56,6 +57,9 @@ export class LoginPage {
       //para llamar y establecer como pagina de inicio o principal
       this.navCtrl.setRoot(HomePage,{user:this._userN.value});
     }else{
+      if(this.xintentos<3){
+      
+      this.xintentos++;
       const alert = this.alertCtrl.create({
         title: 'Login Incorrecto!',
         subTitle: 'Por Favor Introduzca User and Password Valido! '+ this._userN.value,
@@ -63,18 +67,24 @@ export class LoginPage {
       });
       alert.present();
       return      
+    }else{
+        const alert = this.alertCtrl.create({
+          title: 'Por Favor Registrese..!',
+          subTitle: 'Ha excedido el Numero permitido de Intentos,Debe Registrarse antes de Ingresar a la Aplicacion! ',
+          buttons: ['OK']
+        });
+        alert.present();
+      this.register();
+      
+    }
+    
     }
   }
 
   //metodo para limpiar valores
-  cacelar(){
-    // const alert = this.alertCtrl.create({
-    //   title: 'Login Canceled!',
-    //   subTitle: 'Accion Cancelada! ',
-    //   buttons: ['OK']
-    // });
-    // alert.present();
+  register(){
     //asiganr valor en blanco
+    
     this.navCtrl.push(RegistrarPage);
     this._userN.value="";
     this._userPwd.value="";    
