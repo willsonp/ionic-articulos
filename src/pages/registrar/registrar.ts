@@ -42,12 +42,12 @@ export class RegistrarPage {
       let xuserregistred=this._userE.value
       let xuser=this.data.find(user=> user.username===xuserregistred)
     
-      if(xuser===undefined||xuser===xuserregistred){
+      if(xuser!==undefined){
         console.log(xuser);
 
         const alert = this.alertCtrl.create({
           title: 'Validacion de Usuario!',
-          subTitle: 'Favor Verificaque User ya Existe intente otro Diferente!  ',
+          subTitle: 'Favor Verifique User ya Existe intente otro Diferente!  ',
           buttons: ['OK']
         });
         alert.present();
@@ -60,7 +60,7 @@ export class RegistrarPage {
       this.cargarData();
   
   
-    this.limpiarValores();
+      this.limpiarValores();
     }else{
        const alert = this.alertCtrl.create({
         title: 'Control!',

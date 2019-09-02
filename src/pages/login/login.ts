@@ -24,7 +24,8 @@ export class LoginPage {
   xintentos=0;
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public servicio: LoginServices) {
     //consultar los usuarios
-    this.cargarData();   
+    this.cargarData();
+    
   }
 
   //metodo para validar usuario y password
