@@ -21,13 +21,10 @@ export class LoginPage {
   @ViewChild('userName') _userN;
   @ViewChild('userPasswd') _userPwd;  
   data:any;
-  load:any;
   xintentos=0;
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public servicio: LoginServices) {
     //consultar los usuarios
-    this.cargarData();
-    this.load=JSON.stringify(this.data);
-    
+    this.cargarData();   
   }
 
   //metodo para validar usuario y password

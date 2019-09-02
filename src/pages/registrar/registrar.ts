@@ -21,13 +21,14 @@ export class RegistrarPage {
   data:any;
   load :any;
   constructor(public navCtrl: NavController, public navParams: NavParams ,public servicio: LoginServices,public alertCtrl: AlertController) {
+    this.cargarData();
   }
 
   register() {
     console.log('ionViewDidLoad RegistrarPage');
   }
 
-
+  
   publicar(){
     if(this._userE.value!=="" && this._userPwd.value!==""){
       
@@ -37,17 +38,28 @@ export class RegistrarPage {
       'userpasswd':this._userPwd.value
       
       }
-    //console.log("======>"+this._desc.value)
-    //this.servicio.publicar(obj); 
-    this.servicio.editar(obj);
+    //verificar si el usuario ya esta registrado
+      let xuserregistred=this._userE.value
+      let xuser=this.data.find(user=> user.username===xuserregistred)
     
-    this.cargarData();
+      if(xuser===undefined||xuser===xuserregistred){
+        console.log(xuser);
 
-  //   for(let i=0; i < this.data; i++){ // n is array.length
-  //     this.load.find({  username : this.data[i] , passw : this.data[i] });
-  //     console.log(this.load[i]);
-  //  }
+        const alert = this.alertCtrl.create({
+          title: 'Validacion de Usuario!',
+          subTitle: 'Favor Verificaque User ya Existe intente otro Diferente!  ',
+          buttons: ['OK']
+        });
+        alert.present();
+        return
+      }//hasta aqui verificacion de usuario
 
+      //this.servicio.publicar(obj); 
+
+      this.servicio.editar(obj);
+      this.cargarData();
+  
+  
     this.limpiarValores();
     }else{
        const alert = this.alertCtrl.create({
