@@ -39,10 +39,21 @@ export class LoginPage {
     
     let xuser=this.data.find(user=> user.username===xusername)
     
-    if(xuser!==undefined){
+    if(xuser===undefined||xuser===''){
       console.log(xuser);
+      const alert = this.alertCtrl.create({
+        title: 'Valor Incorrecto!',
+        subTitle: 'Favor Verificaque User y Passwd! '+ this._userN.value,
+        buttons: ['OK']
+      });
+      alert.present();
+      this.xintentos++;
+      if(this.xintentos>3){
+        this.register(); //llammar el registro  
+      }
+      return
     }
-  
+   //Solo Entrar si usuario y Password son Validos
     if(this._userN.value===xuser.username && this._userPwd.value===xuser.userpasswd){
       //
       const alert = this.alertCtrl.create({
@@ -83,8 +94,8 @@ export class LoginPage {
 
   //metodo para limpiar valores
   register(){
-    //asiganr valor en blanco
-    
+    //llamar el regsitro y asiganr valor en blanco
+
     this.navCtrl.push(RegistrarPage);
     this._userN.value="";
     this._userPwd.value="";    
