@@ -10,22 +10,22 @@
 <ion-content padding>
   
     
-    <ion-card *ngFor="let item of arti">
+    <ion-card *ngFor="let item of data">
       <ion-card>
-        <button ion-button full color="secondary" round (click)="createNewPost()">Register Posts</button>    
+        <button ion-button full color="secondary" round (click)="createNewPost()">Register new Posts</button>    
       </ion-card>
     
-        <img src='{{item.icon}}'/>
+        <img src='{{item.url}}'/>
         
         <ion-card-content>
           <ion-card-title >
-            {{item.title}}
+            {{item.titulo}}
             </ion-card-title>
            
             <ion-col>
                 <button ion-button clear small color="primary" icon-start>
                   <ion-icon name='thumbs-up'></ion-icon>
-                  <ion-badge color="secondary">0</ion-badge>
+                  <ion-badge color="secondary">{{item.likes}}</ion-badge>
                   </button>
                
              </ion-col>
@@ -33,7 +33,7 @@
              <ion-col>
               <button ion-button clear small color="dark" icon-start>
                 <ion-icon name='thumbs-down'></ion-icon>
-                <ion-badge color="danger">0</ion-badge>
+                <ion-badge color="danger">{{item.unlikes}}</ion-badge>
                 </button>
              
            </ion-col>
