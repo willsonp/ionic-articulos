@@ -21,10 +21,7 @@ export class DatailsPage {
   
    item:any;
    data:any;
-  constructor(public navCtrl: NavController, 
-              public navParams: NavParams,
-              public servicio: ArticulosServices,
-              public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public servicio: ArticulosServices, public alertCtrl: AlertController) {
 
     this.servicio.getPost();
     this.item=this.navParams.get('item');
@@ -42,7 +39,9 @@ export class DatailsPage {
       'id':Date.now(),  
       'titulo':this._tiTle.value,
       'descripcion':this._desc.value,
-      'likes':0
+      'likes':0,
+      'unlikes':0,        
+      'url':'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQill4zwwLxOUFaw9GnagHm5gMuGqxqGvcOLNLvDDiA241Xhbtf'
       }
     //console.log("======>"+this._desc.value)
     //this.servicio.publicar(obj); 

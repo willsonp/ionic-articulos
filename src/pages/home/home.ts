@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { DatailsPage } from '../datails/datails';
 import { ArticulosServices } from '../../services/articulosServices';
+import { NewpostsPage } from '../newposts/newposts';
 
 @Component({
   selector: 'page-home',
@@ -77,7 +78,10 @@ export class HomePage {
   openNavDetailsPage(item: any) {
      this.navCtrl.push(DatailsPage, { item: item });
    }
-   
+    
+  createNewPost() {
+    this.navCtrl.push(NewpostsPage);
+  }
    
 
    

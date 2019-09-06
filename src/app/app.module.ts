@@ -17,6 +17,7 @@ import { ArticulosServices } from '../services/articulosServices';
 import { RegistrarPage } from '../pages/registrar/registrar';
 import { MostrarPage } from '../pages/mostrar/mostrar';
 import { LoginServices } from '../services/loginService';
+import { NewpostsPage } from '../pages/newposts/newposts';
 
 //para vlidar la conexion con FireBase
 export const firebaseConfig = {
@@ -37,7 +38,8 @@ export const firebaseConfig = {
     DatailsPage,
     LoginPage,
     RegistrarPage,
-    MostrarPage
+    MostrarPage,
+    NewpostsPage
     
   ],
   imports: [
@@ -55,7 +57,9 @@ export const firebaseConfig = {
     DatailsPage,
     LoginPage,
     RegistrarPage,
-    MostrarPage
+    MostrarPage,
+    NewpostsPage
+,
   ],
   providers: [
     StatusBar,
