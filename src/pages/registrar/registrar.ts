@@ -35,7 +35,9 @@ export class RegistrarPage {
       let obj:any={
       'id':Date.now(),  
       'username':this._userE.value,
-      'userpasswd':this._userPwd.value
+      'userpasswd':this._userPwd.value,
+      'userLevel':this.load
+      
       
       }
     //verificar si el usuario ya esta registrado
@@ -92,4 +94,8 @@ export class RegistrarPage {
     }));
 
 }
+  showSelectValue(userLevel: any) {
+  this.load=userLevel;
+  console.log(this.load);
+  }
 }
