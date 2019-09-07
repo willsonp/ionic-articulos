@@ -16,18 +16,32 @@
       <img src='{{item.url}}'/> 
    
       <p>
-        {{item.description}}
+        {{item.descripcion}}
       </p>
 
-            
-      <ion-col text-right>
+      <ion-col>
+        <button ion-button clear small color="primary" icon-start>
+          <ion-icon name='thumbs-up'></ion-icon>
+          <ion-badge color="secondary">{{item.likes}}</ion-badge>
+          </button>
+       
+     </ion-col>
+ 
+     <ion-col>
+      <button ion-button clear small color="dark" icon-start>
+        <ion-icon name='thumbs-down'></ion-icon>
+        <ion-badge color="danger">{{item.unlikes}}</ion-badge>
+        </button>
+      </ion-col>
+    
+      <!-- <ion-col text-right>
         <button ion-button clear small color="primary" icon-start>
           <ion-icon name='chatbubbles'></ion-icon>
           Comments
           </button>
         <ion-badge color="dark">110k</ion-badge>
       </ion-col>
-      
+       -->
       
     </ion-card>
 
