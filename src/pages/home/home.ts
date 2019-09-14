@@ -98,4 +98,8 @@ export class HomePage {
   {
      this.servicio.eliminarPost(id);
   }
+
+  doLikes(id:any){
+    this.servicio.updateLike(id);
+  }
 }

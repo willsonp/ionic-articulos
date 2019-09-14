@@ -26,7 +26,7 @@ export class ArticulosServices{
 
     updateLike(obj:any)
     {
-    return this.AFD.database.ref('articulos/'+obj.id).update
+    this.AFD.database.ref('articulos/'+obj.id).update
     }
 
      
