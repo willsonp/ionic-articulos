@@ -21,7 +21,7 @@
 
       <ion-col>
         <button ion-button clear small color="primary" icon-start>
-          <ion-icon name='thumbs-up'></ion-icon>
+          <ion-icon name='thumbs-up'>Like</ion-icon>
           <ion-badge color="secondary">{{item.likes}}</ion-badge>
           </button>
        
@@ -29,20 +29,13 @@
  
      <ion-col>
       <button ion-button clear small color="dark" icon-start>
-        <ion-icon name='thumbs-down'></ion-icon>
+        <ion-icon name='thumbs-down'>Unlike</ion-icon>
         <ion-badge color="danger">{{item.unlikes}}</ion-badge>
         </button>
       </ion-col>
     
-      <ion-col>
-        <button ion-button clear small color="danger" icon-start>
-          <ion-icon name='trash'></ion-icon>
-          <ion-badge color="danger" (click)="deletePost(item)">
-            Delete
-          </ion-badge>
-          </button>             
-     </ion-col>
-
+    
+    
       <!-- <ion-col text-right>
         <button ion-button clear small color="primary" icon-start>
           <ion-icon name='chatbubbles'></ion-icon>
@@ -96,7 +89,7 @@
           
         <button ion-button clear small color="primary" icon-start>
             {{i.titulo}}  
-            <ion-icon name='thumbs-up'></ion-icon>
+            <ion-icon name='thumbs-up'>Like</ion-icon>
             <ion-badge color="secondary">{{i.likes}}</ion-badge>
             </button>
               

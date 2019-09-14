@@ -94,4 +94,8 @@ export class HomePage {
     }));
    
   }
+  deletePost(id:any)
+  {
+     this.servicio.eliminarPost(id);
+  }
 }
