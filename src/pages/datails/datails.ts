@@ -82,6 +82,11 @@ export class DatailsPage {
        }));
    
   }
+  deletePost(id:any)
+  {
+      
+      this.servicio.eliminarPost(id);
+  }
   //llamar mostrar
 //  mosTrar(o:any){
 //    this.navCtrl.push(MostrarPage, {item_o:o});

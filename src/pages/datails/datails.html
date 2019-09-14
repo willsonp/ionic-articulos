@@ -34,6 +34,15 @@
         </button>
       </ion-col>
     
+      <ion-col>
+        <button ion-button clear small color="danger" icon-start>
+          <ion-icon name='trash'></ion-icon>
+          <ion-badge color="danger" (click)="deletePost(item)">
+            Delete
+          </ion-badge>
+          </button>             
+     </ion-col>
+
       <!-- <ion-col text-right>
         <button ion-button clear small color="primary" icon-start>
           <ion-icon name='chatbubbles'></ion-icon>

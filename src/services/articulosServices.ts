@@ -20,5 +20,14 @@ export class ArticulosServices{
       this.AFD.database.ref('articulos/'+obj.id).set(obj);
     }
 
+    public eliminarPost(obj:any){
+      this.AFD.database.ref('articulos/'+obj.id).remove();
+    }
+
+    updateLike(obj:any)
+    {
+    return this.AFD.database.ref('articulos/'+obj.id).update
+    }
+
      
 }
