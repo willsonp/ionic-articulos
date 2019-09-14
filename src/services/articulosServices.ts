@@ -24,10 +24,10 @@ export class ArticulosServices{
       this.AFD.database.ref('articulos/'+obj.id).remove();
     }
 
-    updateLike(obj:any)
-    {
-      this.AFD.database.ref('articulos/'+obj.id).set(obj);
-    }
 
-     
+
+
+    
+
+
 }
