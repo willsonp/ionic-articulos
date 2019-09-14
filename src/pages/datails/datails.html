@@ -20,7 +20,7 @@
       </p>
 
       <ion-col>
-        <button ion-button clear small color="primary" icon-start>
+        <button ion-button clear small color="primary" icon-start (click)="doLikes(item)">
           <ion-icon name='thumbs-up'></ion-icon>
           <ion-badge color="secondary">{{item.likes}}</ion-badge>
           </button>
@@ -28,7 +28,7 @@
      </ion-col>
  
      <ion-col>
-      <button ion-button clear small color="dark" icon-start>
+      <button ion-button clear small color="dark" icon-start (click)="doUnLikes(item)">
         <ion-icon name='thumbs-down'></ion-icon>
         <ion-badge color="danger">{{item.unlikes}}</ion-badge>
         </button>

@@ -83,17 +83,17 @@ export class DatailsPage {
    
   }
   
-
-
-
-
-
-
-
-
+  doLikes(id:any){
+    id.likes++;
+    console.log(id.likes);
+    
+    this.servicio.editar(id);
+  }
   
-  //llamar mostrar
-//  mosTrar(o:any){
-//    this.navCtrl.push(MostrarPage, {item_o:o});
-//  }
+  doUnLikes(id:any){
+     
+    id.unlikes++;
+    console.log(id.likes);
+    this.servicio.editar(id);
+  }
 }
