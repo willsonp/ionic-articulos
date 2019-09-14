@@ -100,6 +100,14 @@ export class HomePage {
   }
 
   doLikes(id:any){
+    // console.log(id.likes++);
+    id.likes++;
     this.servicio.updateLike(id);
   }
+  doUnLikes(id:any){
+    // console.log(id.likes++);
+    id.unlikes++;
+    this.servicio.updateLike(id);
+  }
+  
 }
