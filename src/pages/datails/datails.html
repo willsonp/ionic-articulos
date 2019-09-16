@@ -55,13 +55,13 @@
      </ion-title>
      <ion-list>
       
-      <ion-item>
+      <!-- <ion-item>
         <ion-label floating>Titulo:</ion-label>
         <ion-input type="text" #tiTle></ion-input>
       </ion-item>
-    
+     -->
       <ion-item>
-        <ion-label floating>Descripcion:</ion-label>
+        <ion-label floating>Deja tu comentario Aqui</ion-label>
         <ion-input type="text" #desc></ion-input>
       </ion-item>
     
@@ -84,16 +84,17 @@
   <ion-card *ngFor='let i of data'>
       <!-- poner entrada de datos aqui -->
       <ion-col text-right>
-          
+            
         <button ion-button clear small color="primary" icon-start>
             {{i.titulo}}  
-            <ion-icon name='thumbs-up'></ion-icon>
-            <ion-badge color="secondary">{{i.likes}}</ion-badge>
+            <!-- <ion-icon name='thumbs-up'></ion-icon>
+            <ion-badge color="secondary">{{i.likes}}</ion-badge> -->
             </button>
               
       </ion-col>  
-      <p>
-          {{i.descripcion}} 
+      <p>        
+          {{i}}
+      
       </p>
    </ion-card>
    

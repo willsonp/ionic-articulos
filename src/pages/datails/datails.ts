@@ -23,8 +23,13 @@ export class DatailsPage {
    data:any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public servicio: ArticulosServices, public alertCtrl: AlertController) {
 
-    this.servicio.getPost();
+    
     this.item=this.navParams.get('item');
+    //this.servicio.getPost();
+
+    this.servicio.getPostID(this.item);
+
+    this.cargarData();
   }
 
   ionViewDidLoad() {
@@ -33,21 +38,25 @@ export class DatailsPage {
   }
 
   publicar(){
-    if(this._desc.value!=="" && this._tiTle.value!==""){
+    if(this._desc.value!==""){
       
+      // let obj:any={
+      // 'id':Date.now(),  
+      // 'titulo':this._tiTle.value,
+      // 'descripcion':this._desc.value,
+      // 'likes':0,
+      // 'unlikes':0,        
+      // 'url':'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQill4zwwLxOUFaw9GnagHm5gMuGqxqGvcOLNLvDDiA241Xhbtf'
+      // }
       let obj:any={
-      'id':Date.now(),  
-      'titulo':this._tiTle.value,
-      'descripcion':this._desc.value,
-      'likes':0,
-      'unlikes':0,        
-      'url':'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQill4zwwLxOUFaw9GnagHm5gMuGqxqGvcOLNLvDDiA241Xhbtf'
-      }
-    //console.log("======>"+this._desc.value)
+        'id': this.item.id,        
+        'comentarios':this._desc.value        
+        }
+    console.log("======>"+this.item.id)
     //this.servicio.publicar(obj); 
-    this.servicio.editar(obj);
+    this.servicio.agregarComentario(obj);
     
-    this.cargarData();
+    // this.cargarData();
 
     this.limpiarValores();
     }else{
@@ -70,12 +79,12 @@ export class DatailsPage {
       alert.present();
       //asiganr valor en blanco
       this._desc.value="";
-      this._tiTle.value="";    
+      // this._tiTle.value="";    
     
   }
   //para cargar los datos
   cargarData(){
-       this.servicio.getPost().valueChanges().subscribe((post=>{
+       this.servicio.getPostID(this.item).valueChanges().subscribe((post=>{
           this.data = post;
           console.log(this.data)          
           // this.mosTrar(this.data);    
@@ -91,7 +100,7 @@ export class DatailsPage {
   }
   
   doUnLikes(id:any){
-     
+
     id.unlikes++;
     console.log(id.likes);
     this.servicio.editar(id);
