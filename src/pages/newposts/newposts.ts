@@ -67,14 +67,5 @@ export class NewpostsPage {
       this._url.value="";
     
   }
-  //para cargar los datos
-  // cargarData(){
-  //      this.servicio.getPost().valueChanges().subscribe((post=>{
-  //         this.data = post;
-  //         console.log(this.data)          
-  //         // this.mosTrar(this.data);    
-  //      }));
-   
-  // }
 
 }
